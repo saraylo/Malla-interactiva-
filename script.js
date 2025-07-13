@@ -6,7 +6,9 @@ const semestres = [ { nombre: "Semestre I", materias: [ "Fundamentos de Contabil
 
 let aprobadas = [];
 
-function crearMalla() { semestres.forEach((sem, index) => { const contenedor = document.createElement("div"); contenedor.className = "semestre";
+function crearMalla() { if (!malla) { console.error("No se encontró el contenedor con id 'malla'."); return; }
+
+semestres.forEach((sem, index) => { const contenedor = document.createElement("div"); contenedor.className = "semestre";
 
 const titulo = document.createElement("h2");
 titulo.textContent = sem.nombre;
